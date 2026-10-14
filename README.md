@@ -174,10 +174,6 @@ python analysis.py
 
 ## 👤 Author
 
-**Shubham**
+**Jangir Shubham**
 
 - GitHub: [@shubham2006-bit](https://github.com/shubham2006-bit)
-
----
-
-⭐ If you found this project helpful, consider giving it a star!
