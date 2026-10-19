@@ -1,4 +1,3 @@
-
 # BLACK FRIDAY SALES DATA ANALYSIS
 
 # Import required libraries
@@ -8,10 +7,9 @@ import matplotlib.pyplot as plt
 
 # 1. LOAD DATASET
 
-df = pd.read_csv("BlackFriday   .csv")
+df = pd.read_csv("BlackFriday.csv")
 
 print("BLACK FRIDAY SALES DATA ANALYSIS")
-print("=" * 50)
 
 print("\nDataset Shape:")
 print(df.shape)
@@ -191,10 +189,7 @@ average_purchase = df["Purchase"].mean()
 maximum_purchase = df["Purchase"].max()
 
 
-print("\n")
-print("=" * 50)
-print("PROJECT INSIGHTS")
-print("=" * 50)
+print("\nPROJECT INSIGHTS")
 
 print("\n1. Highest Spending Gender:", highest_gender)
 print("2. Highest Spending Age Group:", highest_age)
