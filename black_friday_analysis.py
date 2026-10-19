@@ -1,15 +1,12 @@
-# ============================================================
+
 # BLACK FRIDAY SALES DATA ANALYSIS
-# ============================================================
 
 # Import required libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# ============================================================
 # 1. LOAD DATASET
-# ============================================================
 
 df = pd.read_csv("BlackFriday   .csv")
 
@@ -23,25 +20,19 @@ print("\nFirst 5 Records:")
 print(df.head())
 
 
-# ============================================================
 # 2. CHECK DATA TYPES
-# ============================================================
 
 print("\nData Types:")
 print(df.dtypes)
 
 
-# ============================================================
 # 3. CHECK MISSING VALUES
-# ============================================================
 
 print("\nMissing Values Before Cleaning:")
 print(df.isnull().sum())
 
 
-# ============================================================
 # 4. HANDLE MISSING VALUES
-# ============================================================
 
 # Product category 2 and 3 contain missing values
 df["Product_Category_2"] = df["Product_Category_2"].fillna(0)
@@ -51,9 +42,7 @@ print("\nMissing Values After Cleaning:")
 print(df.isnull().sum())
 
 
-# ============================================================
 # 5. CHECK DUPLICATES
-# ============================================================
 
 print("\nDuplicate Records:")
 print(df.duplicated().sum())
@@ -65,9 +54,7 @@ print("Shape After Removing Duplicates:")
 print(df.shape)
 
 
-# ============================================================
 # 6. OUTLIER DETECTION
-# ============================================================
 
 # Find Q1 and Q3
 Q1 = df["Purchase"].quantile(0.25)
@@ -95,17 +82,13 @@ print("Upper Limit:", upper_limit)
 print("Number of Outliers:", len(outliers))
 
 
-# ============================================================
 # 7. BASIC STATISTICS
-# ============================================================
 
 print("\nBasic Statistics:")
 print(df["Purchase"].describe())
 
 
-# ============================================================
 # 8. VISUALIZATION 1 - GENDER-WISE SALES
-# ============================================================
 
 gender_sales = df.groupby("Gender")["Purchase"].sum()
 
@@ -119,9 +102,7 @@ plt.ylabel("Total Purchase")
 plt.show()
 
 
-# ============================================================
 # 9. VISUALIZATION 2 - AGE-WISE SALES
-# ============================================================
 
 age_sales = df.groupby("Age")["Purchase"].sum()
 
@@ -136,9 +117,7 @@ plt.xticks(rotation=45)
 plt.show()
 
 
-# ============================================================
 # 10. VISUALIZATION 3 - CITY-WISE SALES
-# ============================================================
 
 city_sales = df.groupby("City_Category")["Purchase"].sum()
 
@@ -152,9 +131,7 @@ plt.ylabel("Total Purchase")
 plt.show()
 
 
-# ============================================================
 # 11. VISUALIZATION 4 - TOP 10 PRODUCT CATEGORIES
-# ============================================================
 
 product_sales = df.groupby("Product_Category_1")["Purchase"].sum()
 
@@ -172,9 +149,7 @@ plt.ylabel("Total Purchase")
 plt.show()
 
 
-# ============================================================
 # 12. VISUALIZATION 5 - PURCHASE DISTRIBUTION
-# ============================================================
 
 plt.figure(figsize=(7, 4))
 
@@ -187,9 +162,7 @@ plt.ylabel("Number of Customers")
 plt.show()
 
 
-# ============================================================
 # 13. VISUALIZATION 6 - TOP 10 OCCUPATIONS
-# ============================================================
 
 occupation_sales = df.groupby("Occupation")["Purchase"].sum()
 
@@ -207,9 +180,7 @@ plt.ylabel("Total Purchase")
 plt.show()
 
 
-# ============================================================
 # 14. SHORT PROJECT INSIGHTS
-# ============================================================
 
 highest_gender = gender_sales.idxmax()
 highest_age = age_sales.idxmax()
